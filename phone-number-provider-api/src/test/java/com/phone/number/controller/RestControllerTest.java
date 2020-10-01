@@ -3,10 +3,12 @@ package com.phone.number.controller;
 import com.phone.number.PhoneNumberProviderApiApplicationTests;
 import com.phone.number.model.PhoneNumber;
 import com.phone.number.repository.PhoneNumberRepository;
+import com.phone.number.response.Response;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -24,16 +26,16 @@ class RestControllerTest extends PhoneNumberProviderApiApplicationTests {
     void getPhoneNumbers() {
         String number = "1234567";
         Mockito.when(repository.save(Mockito.any(PhoneNumber.class))).thenReturn(new PhoneNumber(number, number));
-        List<PhoneNumber> resp = controller.getPhoneNumbers(number);
+        ResponseEntity<Response> resp = controller.getPhoneNumbers(number, 1, 10);
         assertNotNull(resp);
-        assertEquals(0, resp.size());
+        //assertEquals(0, resp.getBody().size());
 
     }
 
     @Test
     void getAllPhoneNumbers() {
-        List<PhoneNumber> res = controller.getAllPhoneNumbers();
+        ResponseEntity<List<PhoneNumber>> res = controller.getAllPhoneNumbers();
         assertNotNull(res);
-        assertEquals(0, res.size());
+        assertEquals(0, res.getBody().size());
     }
 }
