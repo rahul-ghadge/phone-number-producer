@@ -4,6 +4,8 @@
 
 ## Frontend UI (Angular) :: phone-number-UI
  
+ 
+
 ##### Update Angular dependencies using `npm install`
  
 ##### Visit below URL after running angular app using `npm start` or `ng serve`
@@ -12,13 +14,16 @@
 Enter phone number in give text box and click on **`Get`** button. It will find alphanumeric phone numbers and list into the table below.
 
 
+
+
 ## Backend APIs (Spring Boot) :: phone-number-provider-api
  
 ##### For H2 Database console visit 
 > http://localhost:8080/h2-console
 
-##### To get Alphanumeric phone numbers with below number hit below URL
-> http://localhost:8080/number/989899125
+
+##### To get Alphanumeric phone numbers from backend with below number hit below URL
+> http://localhost:8080//number?number=12345678&page=1&size=20
 
 
 ##### Get phones numbers from H2 database for first page hit below URL
