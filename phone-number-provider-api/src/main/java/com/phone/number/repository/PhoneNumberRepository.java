@@ -4,7 +4,6 @@ import com.phone.number.model.PhoneNumber;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
-import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.OrderBy;
@@ -15,6 +14,5 @@ public interface PhoneNumberRepository extends JpaRepository<PhoneNumber, Long> 
     @OrderBy("number")
     List<PhoneNumber> findByNumber(String number);
 
-    @RestResource(path = "find-by-number")
     List<PhoneNumber> findByNumber(@Param("number") String number, Pageable p);
 }

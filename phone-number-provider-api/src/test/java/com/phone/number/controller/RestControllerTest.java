@@ -32,10 +32,10 @@ class RestControllerTest extends PhoneNumberProviderApiApplicationTests {
 
     }
 
-    @Test
-    void getAllPhoneNumbers() {
-        ResponseEntity<List<PhoneNumber>> res = controller.getAllPhoneNumbers();
-        assertNotNull(res);
-        assertEquals(0, res.getBody().size());
-    }
+//    @Test
+//    void getAllPhoneNumbers() {
+//        ResponseEntity<List<PhoneNumber>> res = controller.getAllPhoneNumbers();
+//        assertNotNull(res);
+//        assertEquals(0, res.getBody().size());
+//    }
 }

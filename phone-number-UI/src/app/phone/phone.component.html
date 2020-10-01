@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="row pt-5">
+
+    <div class="col-xs-6 col-md-6 col-lg-6 col-xl-6 ml-5 cardcolor card-form">
+      <table class="table table-striped">
+
+        <thead>
+          <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 ml-5">
+            <div class="panel panel-default">
+              <div class="panel-body message">
+                <div class="form-group">
+                  <label for="bcc" class="col-sm-6 control-label">Enter Phone Number:</label>
+                  <div class="col-sm-11">
+                    <input type="text" class="form-control select2-offscreen" id="phNumber"
+                      placeholder="Enter Phone Number" tabindex="-1" [(ngModel)]="number">
+                  </div>
+                  <span class="col-sm-6 error-msg" *ngIf="requiredMsg"> {{ requiredMsg }} </span>
+                </div>
+
+                <div class="form-group col-sm-6">
+                  <button type="submit" class="btn btn-success" (click)="getNumbers()">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-xs-12 col-md-12 col-lg-12 col-xl-12 ml-5">
+            <span>Total numbers available: <b>{{totalNumbers - 1}}</b></span>
+          </div>
+
+          <br>
+
+          <div class="col-sm-6 col-xs-12 col-md-12 col-lg-12 col-xl-12 ml-5">
+            <div *ngIf="phoneNumers.length > 0">
+              <th>Number </th>
+              <th>Available Number </th>
+
+              <tr class="cursor-pointer" *ngFor="let phNum of phoneNumers | paginate: config">
+
+              <td>{{ phNum.number }} </td>
+              <td> {{ phNum.availableNumbers }} </td>
+
+              </tr>
+            </div>
+            <div *ngIf="phoneNumers.length <= 0">No data found..!</div>
+          </div>
+
+        </thead>
+      </table>
+
+      <pagination-controls *ngIf="totalNumbers > 0" (pageChange)="pageChanged($event)"></pagination-controls>
+
+
+    </div>
+  </div>
+</div>
