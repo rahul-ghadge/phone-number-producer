@@ -38,13 +38,11 @@ public class RestController {
 
     private void createAlphanumericCombinations(String number) {
 
-        List<String> list = new ArrayList<>();
         String originalNumber = number;
-        number = number.substring(0, number.length()-1);
+        number = number.substring(0, number.length() - 1);
 
         for (char ch = 'a'; ch <= 'z'; ch++) {
-            list.add("" + number + ch);
-            repository.save(new PhoneNumber(originalNumber, number));
+            repository.save(new PhoneNumber(originalNumber, (number + ch)));
         }
     }
 
