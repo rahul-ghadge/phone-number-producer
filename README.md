@@ -21,6 +21,8 @@ Enter phone number in give text box and click on **`Get`** button. It will find 
 ##### For H2 Database console visit 
 > http://localhost:8080/h2-console
 
+with url `jdbc:h2:mem:sampledb` and password as `password`
+
 
 ##### To get Alphanumeric phone numbers from backend with below number hit below URL
 > http://localhost:8080//number?number=12345678&page=1&size=20
