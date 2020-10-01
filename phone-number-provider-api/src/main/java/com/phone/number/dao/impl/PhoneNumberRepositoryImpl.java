@@ -22,9 +22,11 @@ public class PhoneNumberRepositoryImpl implements PhoneNumberDAO {
     @Override
     public List<PhoneNumber> getCombinationOfNumbers(String number, int pageNo, int size) {
 
+
+
         List<PhoneNumber> list =  entityManager.createNativeQuery("select * from phone_number pn where pn.number = ?", PhoneNumber.class)
                 .setParameter(1, number)
-                .setFirstResult((pageNo-1) <= 0 ? 0 : pageNo-1 * size)
+                .setFirstResult((pageNo-1) <= 0 ? 0 : (pageNo-1) * size)
                 .setMaxResults(size)
                 .getResultList();
         logger.info("Phone Numbers :: {}", list);

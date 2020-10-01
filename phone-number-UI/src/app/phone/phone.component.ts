@@ -15,7 +15,7 @@ export class PhoneComponent implements OnInit {
   requiredMsg = "";
   config: any;
   pageNo = 1
-  size = 10
+  size = 15
 
   constructor(private service: PhoneService) { }
 

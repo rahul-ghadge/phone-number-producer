@@ -25,19 +25,19 @@
           </div>
 
           <div class="col-sm-6 col-xs-12 col-md-12 col-lg-12 col-xl-12 ml-5">
-            <span>Total numbers available: <b>{{totalNumbers - 1}}</b></span>
+            <span>Total numbers Comination : <b>{{totalNumbers}}</b></span>
           </div>
 
           <br>
 
           <div class="col-sm-6 col-xs-12 col-md-12 col-lg-12 col-xl-12 ml-5">
             <div *ngIf="phoneNumers.length > 0">
-              <th>Number </th>
+              <th>Sr </th>
               <th>Available Number </th>
 
-              <tr class="cursor-pointer" *ngFor="let phNum of phoneNumers | paginate: config">
+              <tr class="cursor-pointer" *ngFor="let i = index; let phNum of phoneNumers | paginate: config">
 
-              <td>{{ phNum.number }} </td>
+              <td>{{ phNum.id }} </td>
               <td> {{ phNum.availableNumbers }} </td>
 
               </tr>
